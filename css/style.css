@@ -105,9 +105,11 @@ header{
 .services > h3{
   text-align: center;
 }
-.services__cards{
+.services__background{
   background-image: url('../img/servicesBackground.webp');
   object-fit: cover;
+}
+.services__cards{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 40px;
