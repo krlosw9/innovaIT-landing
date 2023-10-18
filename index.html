@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -63,7 +64,8 @@
             </div>
             <h4>Análisis Integral</h4>
             <p>Realizamos un análisis detallado de tus operaciones de transporte y logística para identificar áreas de
-              mejora y eficiencia. Con el fin de ofrecerte soluciones tecnológicas específicas y orientadas a resultados.
+              mejora y eficiencia. Con el fin de ofrecerte soluciones tecnológicas específicas y orientadas a
+              resultados.
             </p>
           </div>
           <div class="services__card">
@@ -72,7 +74,8 @@
             </div>
             <h4>Desarrollo a la medida.</h4>
             <p>Creamos soluciones de software a medida que se adaptan perfectamente a tus necesidades. Implementamos
-              tecnologías de vanguardia en el desarrollo de soluciones robustas y escalables que mejoran la eficiencia, la
+              tecnologías de vanguardia en el desarrollo de soluciones robustas y escalables que mejoran la eficiencia,
+              la
               precisión y la productividad en tu empresa.</p>
           </div>
           <div class="services__card">
@@ -184,18 +187,18 @@
             </p>
           </div>
           <div class="contact__form">
-            <form action="#">
+            <form id="form-send-mail">
               <div class="input-container">
                 <label for="name">Nombre *</label>
-                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre">
+                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" minlength="3" required>
               </div>
               <div class="input-container">
                 <label for="email">Email *</label>
-                <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email" required>
               </div>
               <div class="input-container">
-                <label for="phone">Teléfono</label>
-                <input type="text" name="phone" id="phone" placeholder="Ingresa tu número de teléfono">
+                <label for="phone">Teléfono *</label>
+                <input type="number" name="phone" id="phone" placeholder="Ingresa tu número de teléfono" minlength="5" required>
               </div>
               <div class="input-container">
                 <label for="address">Dirección</label>
@@ -206,7 +209,7 @@
                 <input type="text" name="issue" id="issue" placeholder="Escribe el asunto">
               </div>
               <div class="input-container textarea-container">
-                <label for="issue">Mensaje</label>
+                <label for="message">Mensaje</label>
                 <textarea name="message" id="message" placeholder="Escribe tu mensaje aquí..."></textarea>
               </div>
               <div class="input-container textarea-container">
@@ -237,6 +240,55 @@
     gtag('js', new Date());
 
     gtag('config', 'G-8ZZK9KMNS4');
+  </script>
+  <script>
+    document.getElementById('form-send-mail').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Obtener los datos del formulario
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const issue = document.getElementById('issue').value;
+      const message = document.getElementById('message').value;
+
+      // Crear un objeto con los datos del formulario
+      const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        address: address,
+        issue: issue,
+        messageContact: message
+      };
+      if(!name || !email || !phone){
+        alert("Los campos con * son obligatorios");
+        return;
+      }
+      
+      fetch('https://innovasit.com/api/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+          
+        })
+        .catch(error => {
+          alert("Ocurrió un error al enviar correo");
+        });
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('address').value = '';
+        document.getElementById('issue').value = '';
+        document.getElementById('message').value = '';
+    });
   </script>
 </body>
 
