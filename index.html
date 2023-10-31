@@ -4,35 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Optimiza la gestión de mantenimiento de vehículos y embarcaciones en el sector del transporte terrestre y fluvial con nuestro software especializado. Simplifica el seguimiento de mantenimientos, programación de servicios y reduce costos operativos. ¡Descubre cómo mejorar la eficiencia y prolongar la vida útil de tus activos con nuestra solución hoy mismo!">
   <title>Innova it</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css" media="all">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="all">
 </head>
 
 <body>
-  <!-- <header>
-    <div class="logo">
+  <header>
+    <div class="logo" id="logo">
       <img src="./img/logo.png" alt="logo innova it">
     </div>
-    <nav class="navigation-menu">
-      <ul class="navigation-menu__list">
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#about-us">Quienes somos</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#platform">Plataforma</a></li>
-        <li><a href="#weOffer">Qué Ofrecemos</a></li>
-        <li><a href="#contact">Contacto</a></li>
+    <nav class="main-nav" id="main-nav">
+      <div class="toggle-menu" id="toggle-menu">
+        <!-- <img src="./img/hamburger-icon.png" alt="hamburger icon"> -->
+        <div class="hamburger-icon">
+          <div class="hamburger-icon__rod"></div>
+          <div class="hamburger-icon__rod"></div>
+          <div class="hamburger-icon__rod"></div>
+        </div>
+      </div>
+      <ul class="main-menu" id="main-menu">
+        <li class="main-menu__item"><a href="#home" class="main-menu__link">Inicio</a></li>
+        <li class="main-menu__item"><a href="#about-us" class="main-menu__link">Quienes somos</a></li>
+        <li class="main-menu__item"><a href="#services" class="main-menu__link">Servicios</a></li>
+        <li class="main-menu__item"><a href="#platform" class="main-menu__link">Plataforma</a></li>
+        <li class="main-menu__item"><a href="#weOffer" class="main-menu__link">Qué Ofrecemos</a></li>
+        <li class="main-menu__item"><a href="#contact" class="main-menu__link">Contacto</a></li>
       </ul>
     </nav>
-  </header> -->
+  </header>
   <main>
     <section class="home" id="home">
       <div>
-        <h1>Bienvenido a Innova IT</h1>
+        <h1 class="home__title">Bienvenido a Innova IT</h1>
         <p>Transformamos Ideas en Eficiencia: Tu Camino hacia la Excelencia en Transporte y Logística</p>
       </div>
       <div>
@@ -241,7 +250,7 @@
 
     gtag('config', 'G-8ZZK9KMNS4');
   </script>
-  <script>
+  <script >
     document.getElementById('form-send-mail').addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -290,6 +299,7 @@
         document.getElementById('message').value = '';
     });
   </script>
+  <script src="./js/index.js" defer></script>
 </body>
 
 </html>
