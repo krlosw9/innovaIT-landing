@@ -338,6 +338,7 @@ textarea{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 2rem;
 }
 .map > iframe{
   height: 45vh;
