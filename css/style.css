@@ -301,7 +301,7 @@ input{
   font-family: 'Roboto',Arial,Helvetica,sans-serif;
   color: #162b6f;
   font-size: 0.875rem;
-  padding: 0.9rem 0;
+  padding: 0.9rem 5px;
   border-top: none;
   border-right: none;
   border-bottom: 1px solid #162b6f;
@@ -323,6 +323,7 @@ textarea{
   border-left: none;
   background-color: #F8F7F9;
   resize: none;
+  padding: 5px;
 }
 .btn{
   background-color: #162b6f;
